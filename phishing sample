@@ -1,0 +1,26 @@
+ Phishing Analysis — sample-phish-1
+
+Source observed (display): MS Outlook Support <info@outlook-support.dk>  
+Displayed link: https://www.account.live.com  
+Urgent text quoted:** "Your Hotmail Account services has expired." / "Sign in Re-activate your account"
+
+Phishing traits found
+- Sender domain `outlook-support.dk` is not an official Microsoft domain → possible spoofing.
+- Display link appears to be Microsoft but may be mismatched (actual href must be copied & inspected).
+- Urgent, threatening language to force quick action.
+- Grammar and spelling errors present ("services has expired") — not consistent with corporate messaging.
+- Visual impersonation (Outlook logo + Microsoft styling).
+
+ Evidence to attach
+- `sample-phish-1.eml` (raw message, sanitized)
+- `headers.txt` (full Received / Authentication-Results lines)
+- `links.md` (list of display URLs and actual hrefs)
+- `screenshots/hover_screenshot.png` (hover screenshot showing actual URL)
+
+ Recommended actions
+1. Quarantine and block the sending domain.
+2. Submit suspected URLs to VirusTotal / URLscan.io.
+3. If someone interacted with the message, force password reset and enable MFA.
+4. Report sample to organizational SOC and to anti-phishing services.
+
+Risk rating: HIGH — impersonation + credential theft vector expected.
